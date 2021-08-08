@@ -2,7 +2,7 @@
 
 Visualize current wildfires in the United States. Filter by state and wildfire size.
 
-![screenshot](/assets/public/screenshot.png)
+![screenshot](/public/screenshot.png)
 
 ## Overview
 
