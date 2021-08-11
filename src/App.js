@@ -18,13 +18,12 @@ const App = () => {
 
   //console.log("App.js at top =>", selectedState);
 
-  console.log("App.js => RENDER");
+  // console.log("App.js => RENDER");
 
-  //  const STATE = "CA";
   const STATE = selectedState;
   const API_REQUEST = `https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/CY_WildlandFire_Perimeters_ToDate/FeatureServer/0/query?where=irwin_POOState%20%3D%20'US-${STATE}'&outFields=*&outSR=4326&f=json`;
 
-  console.log("Before useEffect");
+  // console.log("Before useEffect");
 
   useEffect(() => {
     fetch(API_REQUEST)
@@ -57,18 +56,18 @@ const App = () => {
           // }
 
           if (lat && long && acres >= selectedAcres) {
-            console.log("App.js => filtering fires at minimum:", selectedAcres);
+            // console.log("App.js => filtering fires at minimum:", selectedAcres);
             filteredFires.push(fire);
           }
         });
 
-        console.log("During useEffect");
+        // console.log("During useEffect");
 
         //console.log(filteredFires);
         setFilteredFires(filteredFires);
       })
       .catch((error) => {
-        console.log("Error fetching data: ", error);
+        // console.log("Error fetching data: ", error);
         setError(error);
       })
       .finally(() => {
@@ -76,7 +75,7 @@ const App = () => {
       });
   }, [API_REQUEST, selectedAcres]);
 
-  console.log("After useEffect");
+  // console.log("After useEffect");
 
   if (loading) return "Loading...";
   if (error) return "Error!";
@@ -84,25 +83,25 @@ const App = () => {
   //console.log("filteredFires:", filteredFires);
 
   const selectedStateHandler = (state, position) => {
-    console.log("App.js => selectedState:", state);
+    // console.log("App.js => selectedState:", state);
     setSelectedState(state);
     setPosition(position);
   };
 
   const updatePositionHandler = (position) => {
-    console.log("App.js => position:", position);
+    // console.log("App.js => position:", position);
     setPosition(position);
   };
 
   const selectedAcresHandler = (acres) => {
-    console.log("App.js => selectedAcres:", acres);
+    // console.log("App.js => selectedAcres:", acres);
     setSelectedAcres(acres);
   };
 
   return (
     <div>
-      {console.log("***** RENDER *****")}
-      {console.log("App.js => selectedState:", selectedState)}
+      {/* {console.log("***** RENDER *****")} */}
+      {/* {console.log("App.js => selectedState:", selectedState)} */}
       {/* {console.log('App.js return => position:', position)} */}
       <Map position={position} zoom={zoom} fires={filteredFires} />
       <Filter
