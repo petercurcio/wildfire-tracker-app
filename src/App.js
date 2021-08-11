@@ -5,7 +5,7 @@ import Filter from "./components/UI/Filter";
 
 const App = () => {
   //const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filteredFires, setFilteredFires] = useState(null);
   const [selectedState, setSelectedState] = useState("OR");
@@ -26,6 +26,7 @@ const App = () => {
   // console.log("Before useEffect");
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(API_REQUEST)
       .then((response) => {
         if (response.ok) {
@@ -71,13 +72,13 @@ const App = () => {
         setError(error);
       })
       .finally(() => {
-        setLoading(false);
+        setIsLoading(false);
       });
   }, [API_REQUEST, selectedAcres]);
 
   // console.log("After useEffect");
 
-  if (loading) return "Loading...";
+  if (isLoading) return "Loading...";
   if (error) return "Error!";
 
   //console.log("filteredFires:", filteredFires);
@@ -103,13 +104,13 @@ const App = () => {
       {/* {console.log("***** RENDER *****")} */}
       {/* {console.log("App.js => selectedState:", selectedState)} */}
       {/* {console.log('App.js return => position:', position)} */}
-      <Map position={position} zoom={zoom} fires={filteredFires} />
       <Filter
         defaultValue={selectedState}
         updatePosition={updatePositionHandler}
         selectedState={selectedStateHandler}
         selectedAcres={selectedAcresHandler}
       />
+      <Map position={position} zoom={zoom} fires={filteredFires} />
     </div>
   );
 };
