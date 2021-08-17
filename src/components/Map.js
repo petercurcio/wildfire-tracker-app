@@ -1,6 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup, MapConsumer } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  MapConsumer,
+} from "react-leaflet";
 
 const myIcon = L.icon({
   iconUrl:
@@ -48,8 +54,8 @@ const Map = (props) => {
   //   const [position, setPosition] = useState([lat, lng]);
 
   //  const position = [lat, lng];
-  console.log("Map.js => props.position:", props.position);
-  console.log("Map.js => RENDER");
+  // console.log("Map.js => props.position:", props.position);
+  // console.log("Map.js => RENDER");
   return (
     <MapContainer
       className="map"
@@ -60,8 +66,7 @@ const Map = (props) => {
     >
       <MapConsumer>
         {(map) => {
-          map.flyTo(props.position, 7)
-          {/* console.log("map center:", map.getCenter()); */}
+          map.flyTo(props.position, 7);
           return null;
         }}
       </MapConsumer>

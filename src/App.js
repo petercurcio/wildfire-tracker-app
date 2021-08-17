@@ -11,9 +11,12 @@ const App = () => {
   const [selectedState, setSelectedState] = useState("OR");
   const [selectedAcres, setSelectedAcres] = useState(1000);
 
-  const [lat, setLat] = useState(44.0238);
-  const [lng, setLng] = useState(-120.340898);
-  const [zoom, setZoom] = useState(6);
+  // const [lat, setLat] = useState(44.0238);
+  // const [lng, setLng] = useState(-120.340898);
+  // const [zoom, setZoom] = useState(6);
+  let lat = 44.0238;
+  let lng = -120.340898;
+  let zoom = 6;
   const [position, setPosition] = useState([lat, lng]);
 
   //console.log("App.js at top =>", selectedState);
@@ -26,7 +29,7 @@ const App = () => {
   // console.log("Before useEffect");
 
   useEffect(() => {
-    setIsLoading(true);
+    // setIsLoading(true);
     fetch(API_REQUEST)
       .then((response) => {
         if (response.ok) {
