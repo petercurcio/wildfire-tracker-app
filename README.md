@@ -1,5 +1,7 @@
 # Wildfire Tracker
 
+(Note: This is still very much a work in progress.)
+
 [Live Demo](https://cranky-wilson-a8ae10.netlify.app/)
 
 Visualize current wildfires in the United States. Filter by state and wildfire size.
