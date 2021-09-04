@@ -16,51 +16,11 @@ const myIcon = L.icon({
   popupAnchor: [0, -41],
 });
 
-// function LocationMarker() {
-//   const [position, setPosition] = useState(null)
-//   const map = useMapEvents({
-//     click() {
-//       map.locate()
-//     },
-//     locationfound(e) {
-//       setPosition(e.latlng)
-//       map.flyTo(e.latlng, map.getZoom())
-//     },
-//   })
-
-//   return position === null ? null : (
-//     <Marker position={position}>
-//       <Popup>You are here</Popup>
-//     </Marker>
-//   )
-// }
-
-// function LocationMarker(props) {
-//   const [position, setPosition] = useState(null)
-//   const e = {
-//     latlng: props.position
-//   }
-//   const map = useMapEvents();
-//   // map.flyTo(props.position, map.getZoom());
-//       setPosition(e.latlng.position)
-//       map.flyTo(e.latlng, map.getZoom())
-
-// }
-
 const Map = (props) => {
-  //   const [lat, setLat] = useState(44.0238);
-  //   const [lng, setLng] = useState(-120.340898);
-  //   const [zoom, setZoom] = useState(7);
-  //   const [position, setPosition] = useState([lat, lng]);
-
-  //  const position = [lat, lng];
-  // console.log("Map.js => props.position:", props.position);
-  // console.log("Map.js => RENDER");
   return (
     <MapContainer
       className="map"
       center={props.position}
-      // position={props.position}
       zoom={props.zoom}
       scrollWheelZoom={true}
     >
@@ -103,7 +63,6 @@ const Map = (props) => {
           </Popup>
         </Marker>
       ))}
-      {/* <LocationMarker /> */}
     </MapContainer>
   );
 };

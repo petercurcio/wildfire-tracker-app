@@ -4,20 +4,14 @@ import State from "../helpers/State";
 
 const Filter = (props) => {
   const selectedStateHandler = (state, position) => {
-    // console.log("Filter.js to App.js (selectedState) => ****", state, "****");
     props.selectedState(state);
   };
 
   const updatePositionHandler = (position) => {
-    // console.log("Filter.js to App.js (position) =>", position);
     props.updatePosition(position);
   };
 
-  // console.log("Filter.js => RENDER");
-
   const selectedAcresHandler = (event) => {
-    // console.log("Filter.js => selected Acres:", event.target.value);
-    // console.log(event.target.value.replace(",", "").replace(/>?/g, ""));
     props.selectedAcres(event.target.value.replace(",", "").replace(/>?/g, ""));
   };
 

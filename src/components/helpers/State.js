@@ -312,27 +312,14 @@ const states = [
 const State = (props) => {
   const selectedStateDropdownChangeHandler = (e) => {
     const state = states.find((state) => state.name === e.target.value);
-    // console.log("State.js to Filter.js (selectedState) =>", state.abbreviation);
     props.selectedState(state.abbreviation);
 
     const position = [];
     position.push(state.lat);
     position.push(state.lng);
-    // console.log("State.js to Filter.js (position) =>", position);
     props.position(position);
   };
 
-  // console.log("State.js => RENDER");
-
-  // const currentState = () => {
-  //   states.forEach((state) => {
-  //     if (state.abbreviation === props.defaultValue) {
-  //       console.log("currentState:", state.name);
-  //       return state.name;
-  //     }
-  //   });
-  // };
-  // console.log("State.js => selectedState:", currentState());
   return (
     <select onChange={selectedStateDropdownChangeHandler}>
       {states.map((state) => {
