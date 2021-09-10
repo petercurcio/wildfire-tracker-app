@@ -1,12 +1,12 @@
-# Wildfire Tracker
+# Wildfire Tracker 🔥
+
+Visualize current wildfires in the United States. Filter by state and wildfire size
 
 [Live Demo](https://cranky-wilson-a8ae10.netlify.app/)
 
-Visualize current wildfires in the United States. Filter by state and wildfire size.
+[![](/public/screenshot.png)](https://cranky-wilson-a8ae10.netlify.app/)
 
-![screenshot](/public/screenshot.png)
-
-## Overview
+## Background
 
 After the 2020 wildfire season, when we were facing a possible Level 3 evacuation due to a fire rapidly spreading just south of us, I found myself paying a bit more attention to where wildfires were at a given time. That was one reason for making this app. A couple more were to get comfortable pulling from an api, as well as using React. Both are present in this application.
 
