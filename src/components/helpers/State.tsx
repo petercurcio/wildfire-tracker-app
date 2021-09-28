@@ -309,8 +309,8 @@ const states = [
   },
 ];
 
-const State = (props) => {
-  const selectedStateDropdownChangeHandler = (e) => {
+const State = (props: object) => {
+  const selectedStateDropdownChangeHandler = (e: object) => {
     const state = states.find((state) => state.name === e.target.value);
     props.selectedState(state.abbreviation);
 

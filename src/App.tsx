@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Map from "./components/Map";
+import Header from "./components/Header";
 import Filter from "./components/UI/Filter";
 
 const App = () => {
@@ -27,8 +28,8 @@ const App = () => {
         throw response;
       })
       .then((data) => {
-        const filteredFires = [];
-        data.features.forEach((fire, index) => {
+        const filteredFires: object[] = [];
+        data.features.forEach((fire: object, index: number) => {
           const lat = fire.attributes.irwin_InitialLatitude;
           const long = fire.attributes.irwin_InitialLongitude;
           const acres = fire.attributes.poly_GISAcres;
@@ -51,7 +52,7 @@ const App = () => {
   if (isLoading) return "Loading...";
   if (error) return "Error!";
 
-  const selectedStateHandler = (state, position) => {
+  const selectedStateHandler = (state: string, position: number[]) => {
     setSelectedState(state);
     setPosition(position);
   };
@@ -65,15 +66,17 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Filter
-        defaultValue={selectedState}
-        updatePosition={updatePositionHandler}
-        selectedState={selectedStateHandler}
-        selectedAcres={selectedAcresHandler}
-      />
+    <>
+      <Header>
+        <Filter
+          defaultValue={selectedState}
+          updatePosition={updatePositionHandler}
+          selectedState={selectedStateHandler}
+          selectedAcres={selectedAcresHandler}
+        />
+      </Header>
       <Map position={position} zoom={zoom} fires={filteredFires} />
-    </div>
+    </>
   );
 };
 

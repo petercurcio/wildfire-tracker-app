@@ -1,0 +1,12 @@
+.header {
+  padding: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.header label {
+  margin-left: 1em;
+  margin-right: 0.5em;
+}
