@@ -16,23 +16,27 @@ const Filter = (props) => {
   };
 
   return (
-    <>
-      <label>Acres:</label>
-      <select onChange={selectedAcresHandler}>
-        <option>1,000</option>
-        <option>5,000</option>
-        <option>10,000</option>
-        <option>50,000</option>
-        <option>100,000</option>
-        <option>>100,000</option>
-      </select>
-      <label>State:</label>
-      <State
-        defaultValue={props.defaultValue}
-        position={updatePositionHandler}
-        selectedState={selectedStateHandler}
-      />
-    </>
+    <div className="filter-wrapper">
+      <div className="acres-filter">
+        <label>Acres:</label>
+        <select onChange={selectedAcresHandler}>
+          <option>1,000</option>
+          <option>5,000</option>
+          <option>10,000</option>
+          <option>50,000</option>
+          <option>100,000</option>
+          <option>&gt;100,000</option>
+        </select>
+      </div>
+      <div className="state-filter">
+        <label>State:</label>
+        <State
+          defaultValue={props.defaultValue}
+          position={updatePositionHandler}
+          selectedState={selectedStateHandler}
+        />
+      </div>
+    </div>
   );
 };
 
