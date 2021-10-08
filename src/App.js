@@ -44,7 +44,7 @@ const App = () => {
         setError(error);
       })
       .finally(() => {
-        // setIsLoading(false);
+        setIsLoading(false);
       });
   }, [API_REQUEST, selectedAcres]);
 
