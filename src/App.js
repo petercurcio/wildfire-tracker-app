@@ -44,12 +44,13 @@ const App = () => {
         setError(error);
       })
       .finally(() => {
-        setIsLoading(false);
+        // setIsLoading(false);
       });
   }, [API_REQUEST, selectedAcres]);
 
   // if (isLoading) return "Loading...";
-  if (error) return "Error!";
+  if (error)
+    return "Error: Please ensure you have JavaScript enabled in your browser.";
 
   const selectedStateHandler = (state, position) => {
     setSelectedState(state);
