@@ -1,3 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
 .map {
   height: 100vh;
 }

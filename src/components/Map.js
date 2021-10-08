@@ -7,6 +7,7 @@ import {
   Popup,
   MapConsumer,
 } from "react-leaflet";
+import Loader from "./UI/Loader";
 
 const myIcon = L.icon({
   iconUrl:
@@ -17,7 +18,9 @@ const myIcon = L.icon({
 });
 
 const Map = (props) => {
-  return (
+  return props.isLoading ? (
+    <Loader />
+  ) : (
     <MapContainer
       className="map"
       center={props.position}

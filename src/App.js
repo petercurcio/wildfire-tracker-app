@@ -48,7 +48,7 @@ const App = () => {
       });
   }, [API_REQUEST, selectedAcres]);
 
-  if (isLoading) return "Loading...";
+  // if (isLoading) return "Loading...";
   if (error) return "Error!";
 
   const selectedStateHandler = (state, position) => {
@@ -72,7 +72,12 @@ const App = () => {
         selectedState={selectedStateHandler}
         selectedAcres={selectedAcresHandler}
       />
-      <Map position={position} zoom={zoom} fires={filteredFires} />
+      <Map
+        isLoading={isLoading}
+        position={position}
+        zoom={zoom}
+        fires={filteredFires}
+      />
     </div>
   );
 };
