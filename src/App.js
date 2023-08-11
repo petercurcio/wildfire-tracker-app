@@ -41,6 +41,7 @@ const App = () => {
         setFilteredFires(filteredFires);
       })
       .catch((error) => {
+        console.error(error);
         setError(error);
       })
       .finally(() => {
@@ -49,8 +50,10 @@ const App = () => {
   }, [API_REQUEST, selectedAcres]);
 
   // if (isLoading) return "Loading...";
-  if (error)
+  if (error) {
+    console.error(error);
     return "Error: Please ensure you have JavaScript enabled in your browser.";
+  }
 
   const selectedStateHandler = (state, position) => {
     setSelectedState(state);
